@@ -27,4 +27,15 @@ char *my_strdup(char *str);
 char *my_strchr(char *str, char c);
 int my_strncmp(const char *str1, const char *str2, size_t n);
 
+/* more_string.c */
+int my_strcmp(char *str1, char *str2);
+char *my_strtok(char *str, const char *del);
+int my_char_in_string(char ch, const char *str);
+
+/* more_func.c */
+int my_isalpha(int c);
+void my_arrayrev(char arr[], int length);
+int my_intlen(unsigned int num);
+char *my_itoa(unsigned int num);
+
 #endif
