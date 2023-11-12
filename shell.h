@@ -38,4 +38,8 @@ void my_arrayrev(char arr[], int length);
 int my_intlen(unsigned int num);
 char *my_itoa(unsigned int num);
 
+/* _readinput.c */
+char *_readInput();
+void _hashtag(char *input);
+
 #endif
