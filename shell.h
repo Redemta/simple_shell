@@ -42,4 +42,17 @@ char *my_itoa(unsigned int num);
 char *_readInput();
 void _hashtag(char *input);
 
+/* more_char.c */
+char *my_strncpy(char *dest, const char *src, int n);
+size_t my_strlen(const char *str);
+int my_atoi(const char *str);
+void my_puts(const char *str);
+
+/* memory_functions.c */
+void *my_realloc(void *ptr, unsigned int size_old, unsigned int size_new);
+void *my_memcpy(void *dest, const void *src, unsigned int num);
+void my_free_array(char **cmd, char *line);
+void *my_memset(void *ptr, int val, unsigned int num);
+void *my_malloc(unsigned int size);
+
 #endif

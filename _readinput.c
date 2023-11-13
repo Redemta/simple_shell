@@ -36,7 +36,7 @@ char *_readInput()
 	if (index == 0)
 	{
 		free(buff);
-		return (strdup(""));
+		return (my_strdup(""));
 	}
 	_hashtag(buff);
 	return (buff);
