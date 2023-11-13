@@ -10,6 +10,8 @@
 
 #define BUFSIZE 1024
 
+extern char **environ;
+
 /* my_printf.c */
 int my_printf(const char *format, ...);
 
@@ -54,5 +56,9 @@ void *my_memcpy(void *dest, const void *src, unsigned int num);
 void my_free_array(char **cmd, char *line);
 void *my_memset(void *ptr, int val, unsigned int num);
 void *my_malloc(unsigned int size);
+
+/* env_func.c */
+void create_env_array(char **env);
+char *my_getenv_value(const char *name);
 
 #endif
