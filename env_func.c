@@ -53,3 +53,28 @@ char *my_getenv_value(const char *name)
 	}
 	return (NULL);
 }
+
+/**
+ * free_env - free environment variable array
+ * @env_array: environment variable
+ *
+ * Return: void
+ */
+
+void free_env(char **env_array)
+{
+	char **current;
+
+	if (env_array == NULL)
+	{
+		return;
+	}
+	current = env_array;
+
+	while (*current != NULL)
+	{
+		free(*current);
+		current++;
+	}
+	free(env_array);
+}

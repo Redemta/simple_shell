@@ -7,6 +7,11 @@
 #include <string.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <stddef.h>
 
 #define BUFSIZE 1024
 
@@ -18,6 +23,7 @@ int my_printf(const char *format, ...);
 /* display_prompt.c */
 void display_prompt(void);
 void display_error(char *err_message, int loop_count, char **argv);
+void _prerror(char **argv, int count, char **command);
 
 /* parse_input.c */
 char **parse_input(char *input);
@@ -60,5 +66,25 @@ void *my_malloc(unsigned int size);
 /* env_func.c */
 void create_env_array(char **env);
 char *my_getenv_value(const char *name);
+void free_env(char **env_array);
+
+/* path_cmd.c */
+int search_command(char **command);
+char *build_command(char *input, char *token);
+
+/* my_history.c */
+int display_hist(void);
+int my_history(char *inp);
+
+/* handle_echo.c */
+int execute_echo(char *input[]);
+
+/* my_builtin.c */
+void handle_exit(char **command, char *value, char **argv, int count);
+int handle_change_dir(char **command, __attribute__((unused))int err);
+int handle_help(char **command, __attribute__((unused))int err);
+int handle_display_env(void);
+
+int _putchar(char c);
 
 #endif
